@@ -1,51 +1,53 @@
+                                /*---##Style Général##---*/
+
 body {
     text-align: center;
 }
 
-.sBtn {
-    text-align: right;
-}
+                              /*---##Style Des Todos##---*/
 
-li:hover {
-    color: white
-}
-
+/*Bouton : Editer le Todo*/
 #btnEdit {
+  background-color: red;
+  height: 1em;
+  width: 1em;
     font-size: 2em;
     position: absolute;
     right: 50px;
     color: green;
 }
+#btnEdit:hover {
+    color: lightgreen
+}
+#btnEdit:active {
+    color: white
+}
 
+/*Bouton : effacer le Todo*/
 #btnErase {
-    font-size: 30px;
+  background-color: lime;
+  height: 1em;
+  width: 1em;
+    font-size: 2em;
     position: absolute;
     right: 20px;
     color: darkred;
-    height: 20px;
-}
-
-#btnEdit:hover {
-    color: lightgreen
 }
 
 #btnErase:hover {
     color: red
 }
-
 #btnErase:active {
     color: white
 }
 
-#btnEdit:active {
-    color: white
-}
-
+/* Style d'un Todo validé */
 .rayer {
     text-decoration: line-through;
     background-color: lightgrey;
 }
 
+/*Style des Todos*/
 li {
     background-color: grey;
     left: 10px;
@@ -53,12 +55,31 @@ li {
     width: auto;
     height: auto;
     padding: 10px;
-    cursor: pointer;
-    padding-top: : 10px;
+    padding-top: 10px;
     border-radius: 20px;
-    margin: 10px;
+    margin-bottom: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
     display: block;
 }
+
+.todoSaisie:hover{
+  cursor: pointer;
+  color: white;
+}
+/*Style des priorités*/
+.urgent {
+  color:red;
+  background-color: lightgrey;
+}
+.important{
+  color:black;
+}
+
+.secondaire{
+  color:lightgrey;
+}
+                            /*---##Style De La Fenêtre Modale##---*/
 
 .modal {
     display: none;
@@ -80,11 +101,9 @@ li {
   position: relative;
   text-align: center;
 }
+
 #closeModal{
-  position: absolute;;
-  top:30.8%;
-  right: 38%;
-  font-size:35pt;
+  background-color: black;
   cursor: pointer;
   color: dimgrey;
 }
@@ -104,17 +123,4 @@ color:black;
   width: 30%;
   margin-left: 33.15%;
   margin-top: 15%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
