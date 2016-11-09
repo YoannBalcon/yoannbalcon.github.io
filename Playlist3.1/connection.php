@@ -17,6 +17,6 @@ echo "Pseudo ou mot de passe incorrect";
    $_SESSION['id']=$valid['id'];
    $_SESSION['pseudo']=$userNameVerif;
 
-   header('Location: espacePerso.php');
+   header('Location: index.php');
  }
  ?>

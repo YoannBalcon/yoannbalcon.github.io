@@ -1,5 +1,5 @@
 <?php
-include ('../navbarCall.php');
+include ('../navbar.php');
 
 $playlistsName = $pdo->prepare("SELECT name FROM playlists WHERE id = :playlist_id");
 $playlistsName->bindValue('playlist_id', $_SESSION['playlistId']);

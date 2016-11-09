@@ -1,5 +1,5 @@
 <?php
-include ('../navbarCall.php');
+include ('../navbar.php');
  ?>
 <!-- création d'une nouvelle playlist -->
 <!DOCTYPE html>

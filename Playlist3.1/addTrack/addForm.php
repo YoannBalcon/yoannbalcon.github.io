@@ -1,5 +1,5 @@
 <?php
-include '../navbarCall.php';
+include '../navbar.php';
  ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,9 @@ include '../navbarCall.php';
       <input type="text" name="title" placeholder="title" value =""><br>
       <input type="number" name="duration" placeholder="duration"><br>
       <input type="number" name="year" placeholder="year"><br>
+      <!-- ici l'artiste rentré -->
       <input type="text" name="artist" placeholder="artist"><br>
+      <!-- ici l'artiste rentré -->
       <label for="uploadTrackField">Charger la musique (format mp3, wma, mp4)</label>
       <input type="hidden" name="MAX_SIZE_VALUE" value="10000000">
       <input id = "uploadTrackField" type="file" name="name" value="">

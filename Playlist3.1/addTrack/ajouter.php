@@ -13,5 +13,5 @@ $prep->bindValue("duration", $_POST['duration']);
 $prep->bindValue("year", $_POST['year']);
 $prep->execute();
 
-header('Location: ../espacePerso.php');
+header('Location: ../index.php');
 ?>
