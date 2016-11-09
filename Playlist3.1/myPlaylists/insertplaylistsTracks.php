@@ -7,4 +7,5 @@ $insertData->bindValue('playlist_id', $_SESSION['playlistId']);
 $insertData->bindValue('tracks_id', $_GET['track_id']);
 $insertData->execute();
 header ("Location: interactPlaylist.php")
+
 ?>

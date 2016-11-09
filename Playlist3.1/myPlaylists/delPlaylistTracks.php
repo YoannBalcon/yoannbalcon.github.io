@@ -6,4 +6,5 @@ $deleteData = $pdo->prepare("DELETE FROM playlistsTracks WHERE id= :currentTrack
 $deleteData->bindValue('currentTrack_id', $_GET['track_id']);
 $deleteData->execute();
 header ("Location: interactPlaylist.php")
+
 ?>

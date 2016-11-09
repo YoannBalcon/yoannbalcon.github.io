@@ -75,8 +75,11 @@ $playlistName = $playlistsName->fetch();
           </div>
           <div id = 'addTracks' class="col-md-6"> <h3> Tracks </h3>
             <?php
-            $reponse = $pdo->query("SELECT * FROM tracks");
+            $reponse = $pdo->query("SELECT * FROM tracks"); //  requête non preparée pour
+                                                            //  récup des données de la BDD
+
             ?>
+
             <table class = "table table-striped">
               <thead>
                 <tr>
@@ -89,15 +92,20 @@ $playlistName = $playlistsName->fetch();
               <tbody>
               <?php while ($track = $reponse->fetch()){
               ?>
+
                   <tr>
                     <td> <strong> <?php echo $track['title']; ?> </strong> </td>
                     <td> <?php echo $track['artist']; ?> </td>
                     <td> <?php echo $track['duration']; ?> </td>
                     <td> <?php echo $track['year']; ?> </td>
                     <td hidden> <?php echo $track['id']; ?> </td>
+
                     <td><button type="button" class="btn btn-success myBtn">+</button></td>
+
                     <div class="modal fade" id="myModal" role="dialog">
+
                       <div class="modal-dialog">
+
                         <div class="modal-content">
                           <div class="modal-header" style="padding:35px 50px;">
                             <a href="interactPlaylist.php"><button type="button" class="close" >&times;</button></a>
@@ -109,6 +117,7 @@ $playlistName = $playlistsName->fetch();
 
                               $reqtestend = $reqtest->fetch();
                              ?>
+
                             <h4><span><?php echo $reqtestend['title']; ?></span></h4>
                           </div>
                           <div class="modal-body" style="padding:40px 50px;">
@@ -117,8 +126,12 @@ $playlistName = $playlistsName->fetch();
                               <li> durée: <?php echo $reqtestend['duration']; ?></li>
                               <li>année: <?php echo $reqtestend['year']; ?></li>
                               <li hidden> id: <?php echo $reqtestend['id']; ?></li>
+                              <li> nom: <?php echo $reqtestend['uploadTrack_name']; ?></li>
                             </ul>
-                            <span><audio src="" controls></audio></span>
+                            <?php
+                            // $uploadTrack_name = $reqtestend['uploadTrack_name'];
+                             ?>
+                            <span><audio src='../uploads/<?php echo $reqtestend['uploadTrack_name']; ?>' controls></audio></span>
                           </div>
                           <div class="modal-footer">
                             <a href="interactPlaylist.php"><button type="submit" class="btn btn-danger btn-default pull-left"><span class="glyphicon glyphicon-remove"></span> Annuler</button></a>
