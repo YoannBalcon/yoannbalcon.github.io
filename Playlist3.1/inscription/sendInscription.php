@@ -19,7 +19,7 @@ if (strlen($_POST['pseudo'])>0
 
   $_SESSION['id'] = $pdo->lastInsertId (); // permet de réccupérer le dernier identifiant généré dans la bdd
   $_SESSION['pseudo'] = $_POST['pseudo'];
-  header('Location: ../espacePerso.php');
+  header('Location: ../index.php');
 }
 
 else {
