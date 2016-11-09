@@ -13,6 +13,7 @@ $insertPlaylist->execute();
 
 header('Location: ../espacePerso.php');
 }
+
 else {
   ?><script type="text/javascript">
 
@@ -20,5 +21,7 @@ alert("Champs de saisie vide");
 window.location = "playlistForm.php";
 
 </script><?php
+
 }
+
 ?>

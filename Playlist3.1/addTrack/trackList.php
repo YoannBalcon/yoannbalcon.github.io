@@ -3,7 +3,8 @@
 // connexion à la Base de Données
 require '../connectBdd.php';
 
-$reponse = $pdo->query("SELECT * FROM tracks"); //  requête non preparée pour récup des données de la BDD
+$reponse = $pdo->query("SELECT * FROM tracks"); //  requête non preparée pour
+                                                //  récup des données de la BDD
 
 while ($track = $reponse->fetch()){             // parcours des données reçues ligne par ligne
 ?>

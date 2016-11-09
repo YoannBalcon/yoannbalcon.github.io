@@ -1,4 +1,5 @@
 <?php
+
 require '../connectBdd.php';
 
 $suppr = $pdo->prepare("DELETE  FROM tracks WHERE id= :id" );

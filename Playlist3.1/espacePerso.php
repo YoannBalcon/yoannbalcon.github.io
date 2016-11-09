@@ -1,3 +1,4 @@
+<!-- Espace perso de l'application qui reprend la navbar et le carroussel -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,6 +19,7 @@
     <header>
       <?php require ('navbar.php');?>
     </header>
+
     <?php require ('carrousel.php');?>
   </body>
 </html>

@@ -15,9 +15,11 @@ $playlistName = $playlistsName->fetch();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" media="screen" title="no title">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
   </head>
   <body>
-    <!--Création du container ou il y a les deux tableaux  -->
+    <!--Création du conainer ou il y a les deux tableaux  -->
     <div class="container-fluid">
       <header>
         <h2> Ajouter des titres </h2>
@@ -35,6 +37,7 @@ $playlistName = $playlistsName->fetch();
             $playlistTracks->bindValue('playlist_id', $_SESSION['playlistId']);
             $playlistTracks->execute();
             ?>
+
               <table class = "table table-striped">
                 <thead>
                   <tr>
@@ -63,8 +66,11 @@ $playlistName = $playlistsName->fetch();
           </div>
           <div id = 'addTracks' class="col-md-6"> <h3> Tracks </h3>
             <?php
-            $reponse = $pdo->query("SELECT * FROM tracks");
+            $reponse = $pdo->query("SELECT * FROM tracks"); //  requête non preparée pour
+                                                            //  récup des données de la BDD
+
             ?>
+
             <table class = "table table-striped">
               <thead>
                 <tr>
@@ -77,21 +83,31 @@ $playlistName = $playlistsName->fetch();
               <tbody>
               <?php while ($track = $reponse->fetch()){
               ?>
+
                   <tr>
                     <td> <strong> <?php echo $track['title']; ?> </strong> </td>
                     <td> <?php echo $track['artist']; ?> </td>
                     <td> <?php echo $track['duration']; ?> </td>
                     <td> <?php echo $track['year']; ?> </td>
                     <td hidden> <?php echo $track['id']; ?> </td>
+
                     <td> <a href="interactPlaylist_modal.php?trackId=<?php echo $track['id']?>"><button type="button" class="btn btn-success myBtn">+</button></a></td>
+
+
                   <?php
                   }
+                  // fin de la requête
+
+
                   ?>
               </tbody>
+
             </table>
+
           </div>
         </div>
       </header>
     </div>
+
   </body>
 </html>
